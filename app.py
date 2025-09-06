@@ -48,6 +48,7 @@ def health():
         with engine.connect() as conn:
             conn.execute(text("SELECT 1"))
         return {
+            "version": "1.0",
             "status": "ok",
             "config_source": config_source,   # 'env:database_url' o 'env:pieces'
             "dsn_masked": mask_url(DATABASE_URL)    
